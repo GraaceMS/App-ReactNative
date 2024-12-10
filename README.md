@@ -48,7 +48,7 @@ Para rodar o aplicativo, execute: npx expo start --android
 - ![image](https://github.com/user-attachments/assets/e0bdf57d-e996-4c49-95aa-898b66b0165f)
 - ![image](https://github.com/user-attachments/assets/18f8c6cc-f951-40f9-bae7-10aaf8b8dc0c)
 - ![image](https://github.com/user-attachments/assets/e82db749-6d8d-4333-a838-679a2d3a826f)
-- ![image](https://github.com/user-attachments/assets/e971e162-b2da-4854-80df-2a1438baf3d6
+-  ![image](https://github.com/user-attachments/assets/dc5f9001-e279-4176-8e7a-80802a613e6c)
 - ![image](https://github.com/user-attachments/assets/f3b4a10d-7742-4bb1-a8b6-3b010c14f3b9)
 - ![image](https://github.com/user-attachments/assets/4c69265a-b75a-4166-8efd-101c7e3aa2ee)
 - ![image](https://github.com/user-attachments/assets/1b47179e-d6cf-4eca-a17d-f78ef0c55ed6)
