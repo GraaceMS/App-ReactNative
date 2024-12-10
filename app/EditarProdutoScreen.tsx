@@ -55,7 +55,6 @@ const EditarProdutoScreen = () => {
 
             console.log("Produto atualizado:", updatedProduto);
 
-            // Navega de volta com os dados atualizados
             navigation.navigate("DetalhesProduto", {
               produto: updatedProduto,
             } as never);
