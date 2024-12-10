@@ -25,7 +25,7 @@ const DetalhesProdutoScreen = () => {
       </TouchableOpacity>
       <Image
         source={{
-          uri: produto.image || "https://via.placeholder.com/150", // Imagem padrão caso 'image' esteja vazia
+          uri: produto.image || "https://via.placeholder.com/150",
         }}
         style={styles.image}
       />
