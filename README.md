@@ -1,6 +1,6 @@
 # App-ReactNative
 
-Resumo do Aplicativo
+
 O aplicativo é uma plataforma de gerenciamento de produtos com navegação otimizada, funcionalidades completas e integração com a API https://dummyjson.com. Ele permite a listagem, visualização, adição, edição e exclusão de produtos em categorias masculinas e femininas, além de oferecer uma interface intuitiva com suporte a autenticação básica.
 
 Funcionalidades Implementadas
