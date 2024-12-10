@@ -9,7 +9,7 @@ import MasculinoScreen from "./masculino";
 import FemininoScreen from "./feminino";
 import ConfiguracoesScreen from "./configuracoesScreen";
 import DetalhesProduto from "./DetalhesProdutoScreen";
-import EditarProdutoScreen from "./EditarProdutoScreen"; // Certifique-se de importar corretamente
+import EditarProdutoScreen from "./EditarProdutoScreen";
 import AdicionarProdutoScreen from "./AdicionarProdutoScreen";
 
 const TopTab = createMaterialTopTabNavigator();
