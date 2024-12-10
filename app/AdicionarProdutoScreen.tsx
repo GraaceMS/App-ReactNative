@@ -22,7 +22,6 @@ const AdicionarProdutoScreen = () => {
   });
 
   const handleSave = async () => {
-    // Validação dos campos
     if (
       !formData.title ||
       !formData.description ||
@@ -35,7 +34,6 @@ const AdicionarProdutoScreen = () => {
     }
 
     try {
-      // Simulando requisição POST ao endpoint
       const response = await axios.post(
         "https://dummyjson.com/products/add",
         {
@@ -47,7 +45,6 @@ const AdicionarProdutoScreen = () => {
         }
       );
 
-      // Exibindo o produto adicionado
       Alert.alert(
         "Produto Adicionado",
         JSON.stringify(response.data, null, 2),
