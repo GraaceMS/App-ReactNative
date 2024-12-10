@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "expo-router";
 import axios from "axios";
-import useAuthStore from "./authStore"; // Zustand para armazenar o estado global do usuário
+import useAuthStore from "./authStore"; 
 
 type FormData = {
   username: string;
@@ -21,7 +21,7 @@ const LoginScreen = () => {
         username: data.username,
         password: data.password,
       });
-      setUser({ ...response.data }); // Salva o token e informações do usuário no Zustand
+      setUser({ ...response.data }); 
       Alert.alert("Login bem-sucedido!", `Bem-vindo, ${response.data.firstName}!`);
       router.push("/home");
     } catch (error) {
