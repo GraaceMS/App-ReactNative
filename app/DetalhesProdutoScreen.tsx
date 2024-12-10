@@ -56,7 +56,7 @@ const DetalhesProdutoScreen = () => {
           style={[styles.button, styles.deleteButton]}
           onPress={() => {
             console.log("Produto excluído:", produto.title);
-            navigation.goBack(); // Retorna à página anterior após exclusão
+            navigation.goBack(); 
           }}
         >
           <Text style={styles.buttonText}>Excluir</Text>
