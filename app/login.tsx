@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet } from "react-native";
 
 const LoginScreen = ({ navigation }) => {
   const handleLogin = () => {
-    navigation.navigate("Home"); // Navega para a tela Home
+    navigation.navigate("Home");
   };
 
   return (
