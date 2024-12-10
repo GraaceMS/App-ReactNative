@@ -4,8 +4,8 @@ export type RootStackParamList = {
         id: number;
         title: string;
         description: string;
-        price: number; // Certifique-se de que é um número
-        discount: number; // Certifique-se de que é um número
+        price: number; 
+        discount: number; 
         image: string;
       };
     };
@@ -14,8 +14,8 @@ export type RootStackParamList = {
         id: number;
         title: string;
         description: string;
-        price: number; // Certifique-se de que é um número
-        discount: number; // Certifique-se de que é um número
+        price: number;
+        discount: number; 
         image: string;
       };
     };
