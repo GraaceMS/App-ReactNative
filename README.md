@@ -39,4 +39,22 @@ Zustand: Gerenciamento do estado global.
 React Hook Form: Validação de formulários.
 Gluestack UI: Configuração de tema global.
 
+Para rodar o aplicativo, execute: npx expo start --android 
+
+- ![image](https://github.com/user-attachments/assets/be674f59-4ff4-4998-a138-e944e1057a72)
+- ![image](https://github.com/user-attachments/assets/8f8a11d2-b3f9-445b-ade2-1a4325513a3f)
+- ![image](https://github.com/user-attachments/assets/3dc1edc8-9728-4571-8fb4-07a12ae2ef77)
+- ![image](https://github.com/user-attachments/assets/ba2f92e9-f434-43ad-8829-5a47a3b54662)
+- ![image](https://github.com/user-attachments/assets/e0bdf57d-e996-4c49-95aa-898b66b0165f)
+- ![image](https://github.com/user-attachments/assets/18f8c6cc-f951-40f9-bae7-10aaf8b8dc0c)
+- ![image](https://github.com/user-attachments/assets/e82db749-6d8d-4333-a838-679a2d3a826f)
+- ![image](https://github.com/user-attachments/assets/e971e162-b2da-4854-80df-2a1438baf3d6
+- ![image](https://github.com/user-attachments/assets/f3b4a10d-7742-4bb1-a8b6-3b010c14f3b9)
+- ![image](https://github.com/user-attachments/assets/4c69265a-b75a-4166-8efd-101c7e3aa2ee)
+- ![image](https://github.com/user-attachments/assets/1b47179e-d6cf-4eca-a17d-f78ef0c55ed6)
+
+
+
+
+
 
