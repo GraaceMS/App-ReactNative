@@ -15,7 +15,6 @@ const ConfiguracoesScreen = () => {
           text: "Sair",
           style: "destructive",
           onPress: () => {
-            // Redireciona para a tela de login
             router.replace("/");
           },
         },
