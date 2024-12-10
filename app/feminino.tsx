@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
-import { RootStackParamList } from "./types"; // Certifique-se de que este caminho está correto
+import { RootStackParamList } from "./types";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 type NavigationProp = StackNavigationProp<RootStackParamList, "DetalhesProduto">;
@@ -13,24 +13,42 @@ const FemininoScreen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://dummyjson.com/products/category/womens-dresses")
-      .then((response) => {
-        const produtosCorrigidos = response.data.products.map((produto: any) => ({
-          id: produto.id,
-          title: produto.title,
-          description: produto.description,
-          price: parseFloat(produto.price), // Certifica que o preço é numérico
-          discount: produto.discountPercentage || 0, // Caso não haja desconto, define como 0
-          image: produto.thumbnail || produto.images[0], // Usa a primeira imagem disponível
-        }));
+    const categorias = [
+      "womens-dresses",
+      "womens-shoes",
+      "womens-bags",
+      "womens-jewellery",
+      "womens-watches",
+    ];
+
+    const fetchProdutos = async () => {
+      try {
+        const resultados = await Promise.all(
+          categorias.map((categoria) =>
+            axios.get(`https://dummyjson.com/products/category/${categoria}`)
+          )
+        );
+
+        const produtosCorrigidos = resultados.flatMap((response) =>
+          response.data.products.map((produto: any) => ({
+            id: produto.id,
+            title: produto.title,
+            description: produto.description,
+            price: parseFloat(produto.price),
+            discount: produto.discountPercentage || 0,
+            image: produto.thumbnail || produto.images[0],
+          }))
+        );
+
         setProdutos(produtosCorrigidos);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Erro ao buscar produtos femininos:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchProdutos();
   }, []);
 
   if (loading) {
@@ -50,7 +68,7 @@ const FemininoScreen = () => {
           style={styles.card}
           onPress={() =>
             navigation.navigate("DetalhesProduto", {
-              produto: item, // Passa o objeto completo para a tela de detalhes
+              produto: item,
             })
           }
         >

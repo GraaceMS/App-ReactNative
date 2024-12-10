@@ -13,24 +13,36 @@ const MasculinoScreen = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://dummyjson.com/products/category/mens-shirts")
-      .then((response) => {
-        const produtosCorrigidos = response.data.products.map((produto: any) => ({
-          id: produto.id,
-          title: produto.title,
-          description: produto.description,
-          price: parseFloat(produto.price),
-          discount: produto.discountPercentage || 0,
-          image: produto.thumbnail || produto.images[0],
-        }));
+    const categorias = ["mens-shirts", "mens-shoes", "mens-watches"];
+
+    const fetchProdutos = async () => {
+      try {
+        const resultados = await Promise.all(
+          categorias.map((categoria) =>
+            axios.get(`https://dummyjson.com/products/category/${categoria}`)
+          )
+        );
+
+        const produtosCorrigidos = resultados.flatMap((response) =>
+          response.data.products.map((produto: any) => ({
+            id: produto.id,
+            title: produto.title,
+            description: produto.description,
+            price: parseFloat(produto.price),
+            discount: produto.discountPercentage || 0,
+            image: produto.thumbnail || produto.images[0],
+          }))
+        );
+
         setProdutos(produtosCorrigidos);
-        setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Erro ao buscar produtos masculinos:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchProdutos();
   }, []);
 
   if (loading) {
@@ -50,7 +62,7 @@ const MasculinoScreen = () => {
           style={styles.produto}
           onPress={() =>
             navigation.navigate("DetalhesProduto", {
-              produto: item, // Passa o objeto completo para a tela de detalhes
+              produto: item,
             })
           }
         >

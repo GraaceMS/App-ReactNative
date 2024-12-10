@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "expo-router";
+import axios from "axios";
+import useAuthStore from "./authStore"; // Zustand para armazenar o estado global do usuário
 
 type FormData = {
   username: string;
@@ -11,12 +13,18 @@ type FormData = {
 const LoginScreen = () => {
   const { control, handleSubmit, formState: { errors } } = useForm<FormData>();
   const router = useRouter();
+  const setUser = useAuthStore((state) => state.setUser);
 
-  const onSubmit = (data: FormData) => {
-    if (data.username === "emilys" && data.password === "emilyspass") {
-      Alert.alert("Login bem-sucedido!", "Bem-vindo, Emily!");
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await axios.post("https://dummyjson.com/auth/login", {
+        username: data.username,
+        password: data.password,
+      });
+      setUser({ ...response.data }); // Salva o token e informações do usuário no Zustand
+      Alert.alert("Login bem-sucedido!", `Bem-vindo, ${response.data.firstName}!`);
       router.push("/home");
-    } else {
+    } catch (error) {
       Alert.alert("Erro de Login", "Username ou senha inválidos.");
     }
   };
