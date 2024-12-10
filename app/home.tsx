@@ -22,7 +22,7 @@ const FloatingButton = () => {
   return (
     <TouchableOpacity
       style={styles.floatingButton}
-      onPress={() => navigation.navigate("AdicionarProduto" as never)} // AdicionarProduto deve ser registrado também, caso necessário
+      onPress={() => navigation.navigate("AdicionarProduto" as never)}
     >
       <Text style={styles.floatingButtonText}>+</Text>
     </TouchableOpacity>
@@ -33,7 +33,7 @@ const ProductTabs = () => {
   return (
     <View style={{ flex: 1 }}>
       <TopTab.Navigator
-        id={undefined} // Define explicitamente como undefined
+        id={undefined}
         screenOptions={{
           tabBarActiveTintColor: "#007bff",
           tabBarLabelStyle: { fontSize: 16, fontWeight: "bold" },
@@ -52,7 +52,7 @@ const ProductTabs = () => {
 const ProductStack = () => {
   return (
     <Stack.Navigator
-      id={undefined} // Define explicitamente como undefined
+      id={undefined}
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="ProductTabs" component={ProductTabs} />
@@ -69,7 +69,7 @@ const ProductStack = () => {
 const HomeScreen = () => {
   return (
     <BottomTab.Navigator
-      id={undefined} // Define explicitamente como undefined
+      id={undefined} 
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
